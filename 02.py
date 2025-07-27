@@ -79,6 +79,6 @@ def seven():
     print("Average of Elements:", sum(l) / len(l))
     print("Sorted List:", sorted(l))
 
-seven()
+
 
 
