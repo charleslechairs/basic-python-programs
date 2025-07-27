@@ -1,4 +1,4 @@
-# Title - Basic numerical operations using pythpn
+# Title - Basic numerical operations using python
 import math
 def one():
     print(5)
