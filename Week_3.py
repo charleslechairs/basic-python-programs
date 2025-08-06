@@ -113,3 +113,58 @@ def twelve():
             nl.append(item)
     nl = tuple(nl)
     print(nl)
+
+# Create a dictionary from numbers 1-10 keeping only even numbers as keys and their cubes as values.
+def thirteen():
+    d = {x:x**3 for x in range(1, 11) if x % 2 == 0}
+    print(d)
+
+# You have a dictionary marks = {"John": 45, "Alice": 55}. Add a new student "Bob" with 70 marks and increase "Alice" marks by 10
+def fourteen():
+    marks = {"John": 45, "Alice": 55}
+    marks["Bob"] = 70
+    marks["Alice"] += 10
+    print(marks)
+
+# Convert all keys to uppercase and values to lowercase in {"Name": "ALICE", "City": "DELHI"}.
+def fifteen():
+    d = {"Name": "ALICE", "City": "DELHI"}
+    d = {k.upper(): v.lower() for k, v in d.items()}
+    print(d)
+
+# Create a dictionary where key is subject and value is a list of marks: {"Math": [90, 85], "Science": [88, 92]}. Append 95 to Science.
+def sixteen():
+    d = {"Math": [90, 85], "Science": [88, 92]}
+    d["Science"].append(95)
+    print(d)
+
+# Given marks as a list of tuples [("Alice", 88), ("Bob", 95), ("John", 78)], find student with the highest marks using dictionary.
+def seventeen():
+    marks = [("Alice", 88), ("Bob", 95), ("John", 78)]
+    d = {name: mark for name, mark in marks}
+    highest_student = max(d, key=d.get)
+    print(f"Student with highest marks: {highest_student} with {d[highest_student]} marks")
+
+# Count how many times each tuple appears:[(1, 2), (2, 3), (1, 2), (2, 3), (2, 3)] → {(1, 2): 2, (2, 3): 3}.
+def eighteen():
+    l = [(1, 2), (2, 3), (1, 2), (2, 3), (2, 3)]
+    d = {x: l.count(x) for x in l}
+    print(d)
+
+# Sort dictionary {"a": [1], "b": [1, 2, 3], "c": [1, 2]} based on length of list values. without the use of key:lambda
+def nineteen():
+    d = {"a": [1], "b": [1, 2, 3], "c": [1, 2]}
+    items = list(d.items())
+    for i in range(len(items)):
+        for j in range(i + 1, len(items)):
+            if len(items[i][1]) > len(items[j][1]):
+                items[i], items[j] = items[j], items[i]
+    d = dict(items)
+    print(d)
+
+# You are given two tuples: fields = ("name", "age", "city") and data = ("Alice", 21, "Delhi"). Create a dictionary from these tuples.
+def twenty():
+    fields = ("name", "age", "city")
+    data = ("Alice", 21, "Delhi")
+    d = {fields[i]: data[i] for i in range(len(fields))}
+    print(d)
