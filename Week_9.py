@@ -1,5 +1,5 @@
 import numpy as np
-# Take own 2 vectors and 2 3x3 matrices and perfrom all operations - Addition,Subtraction,Scalar Multiplication,Multiplication & Division, Dot Product, Cross product, Magnitude and unit vector
+# Take own 2 vectors and 2 3x3 matrices and perfrom all operations - Addition,Subtraction,Scalar Multiplication, Dot Product, Cross product, Magnitude, Unit vector, Transpose, Determinant, Inverse, Rank, Trace, Eigenvalues and vectors, Identity, Zeros and Ones and Diagonal
 # A company tracks the number of products sold each month, help the manager to analyze the sale trend.
 # A website tracks the number of visitors everyday for 30 days, the website manager wants to analyze the traffic patterns, help him with your program
 
@@ -7,28 +7,30 @@ import numpy as np
 # Visitors = np.array([120,135,150,160,170,180,200,210,250,300,320,500,480,460,450,430,420,410,400,390,380,370,360,350,340,330,320,310,300,290])
 
 def one():
-    vector1 = np.array([1, 2, 3])
-    vector2 = np.array([4, 5, 6])
+    v1 = np.array([1, 2, 3])
+    v2 = np.array([4, 5, 6])
 
-    matrix1 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-    matrix2 = np.array([[9, 8, 7], [6, 5, 4], [3, 2, 1]])
+    m1 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    m2 = np.array([[9, 8, 7], [6, 5, 4], [3, 2, 1]])
 
-    print("Vector Addition:", vector1 + vector2)
-    print("Vector Subtraction:", vector1 - vector2)
-    print("Scalar Multiplication (vector1 * 2):", vector1 * 2)
-    print("Dot Product:", np.dot(vector1, vector2))
-    print("Cross Product:", np.cross(vector1, vector2))
-    print("Magnitude of vector1:", np.linalg.norm(vector1))
-    print("Unit Vector of vector1:", vector1 / np.linalg.norm(vector1))
+    print("Vector Addition:", v1 + v2)
+    print("Vector Subtraction:", v1 - v2)
+    print("Scalar Multiplication (v1 * 2):", v1 * 2)
+    print("Dot Product:", np.dot(v1, v2))
+    print("Cross Product:", np.cross(v1, v2))
+    print("Magnitude of v1:", np.linalg.norm(v1))
+    print("Unit Vector of v1:", v1 / np.linalg.norm(v1))
 
-    print("\nMatrix Addition:\n", matrix1 + matrix2)
-    print("Matrix Subtraction:\n", matrix1 - matrix2)
-    print("Scalar Multiplication (matrix1 * 2):\n", matrix1 * 2)
-    print("Matrix Multiplication:\n", matrix1 @ matrix2)
-    print("Element-wise Division:\n", matrix1 / matrix2)
-    print("Transpose of matrix1:\n", matrix1.T)
-    print("Determinant of matrix1:", np.linalg.det(matrix1))
-    print("Trace of matrix1:", np.trace(matrix1))
+    print("\nMatrix Addition:\n", m1 + m2)
+    print("Transpose of m1:\n", m1.T)
+    print("Determinant of m1:", np.linalg.det(m1))
+    print("Trace of m1:", np.trace(m1))
+    print("Rank of m1:", np.linalg.matrix_rank(m1))
+    print("Eigenvalues and Eigenvectors of m1:\n", np.linalg.eig(m1))
+    print("Identity Matrix:\n", np.eye(3))
+    print("Zeros Matrix:\n", np.zeros((3, 3)))
+    print("Ones Matrix:\n", np.ones((3, 3)))
+    print("Diagonal of m1:", np.diag(m1))
 
 def two_sales():
     sales = [120,135,150,160,170,180,200,210,250,300,320,500]
